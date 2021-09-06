@@ -5,10 +5,10 @@
 ---
 
 ## 1. NuGet Packages
-- ** MySql.EntityFrameworkCore ** 
-- ** MySql.Data.EntityFramework **
-- ** Microsoft.EntityFrameworkCore**
-- ** Microsoft.EntityFrameworkCore.Tools**
+- **MySql.EntityFrameworkCore** 
+- **MySql.Data.EntityFramework**
+- **Microsoft.EntityFrameworkCore**
+- **Microsoft.EntityFrameworkCore.Tools**
 
 ---
 
