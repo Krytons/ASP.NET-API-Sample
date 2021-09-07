@@ -67,7 +67,7 @@ namespace ProductsAPI.Controllers
             return await _context.Products.ToListAsync();
         }
 
-        // GET: api/products/5
+        // GET: api/products/2
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProductById(long id)
         {
@@ -82,7 +82,7 @@ namespace ProductsAPI.Controllers
             return product;
         }
 
-        // PUT: api/products/5
+        // PUT: api/products/2
         [HttpPut("{id}")]
         public async Task<ActionResult<Product>> PutProduct(long id, Product product)
         {
@@ -105,8 +105,8 @@ namespace ProductsAPI.Controllers
                 if (!ProductExists(id))
                 {
                     //return NotFound();
-                    Response.StatusCode = 400;
-                    return new JsonResult(new Error("Invalid id value"));
+                    Response.StatusCode = 404;
+                    return new JsonResult(new Error($"No products found which id is {id}"));
                 }
                 else
                 {
@@ -126,14 +126,15 @@ namespace ProductsAPI.Controllers
             return CreatedAtAction("GetProductById", new { id = createdProduct.ProductId }, product);
         }
 
-        // DELETE: api/products/5
+        // DELETE: api/products/2
         [HttpDelete("{id}")]
         public async Task<ActionResult<Product>> DeleteProduct(long id)
         {
             var product = await _context.Products.FindAsync(id);
             if (product == null)
             {
-                return NotFound();
+                Response.StatusCode = 404;
+                return new JsonResult(new Error($"No products found which id is {id}"));
             }
 
             _context.Products.Remove(product);
