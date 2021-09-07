@@ -9,6 +9,12 @@ namespace ProductsAPI.Models
 {
     public class Product
     {
+        public Product(string name, double price)
+        {
+            Name = name;
+            Price = price;
+        }
+
         //Auto increment primary key
         [Key]
         public long ProductId { get; set; }

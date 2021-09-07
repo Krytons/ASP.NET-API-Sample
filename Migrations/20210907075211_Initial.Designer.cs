@@ -8,7 +8,7 @@ using ProductsAPI.Models;
 namespace ProductsAPI.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20210906223735_Initial")]
+    [Migration("20210907075211_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
