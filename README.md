@@ -19,6 +19,10 @@
     ```bash
         EntityFrameworkCore\Add-Migration MigrationClassName
     ```
+- **Remove Migration**
+    ```bash
+        EntityFrameworkCore\Remove-Migration
+    ```
 - **Update database**
     ```bash
         EntityFrameworkCore\Update-Database
